@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <style>
+        @import url("index.css");
+    </style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeChat</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script>
+        $.getJSON("https://api.ipify.org?format=json",
+            function (data) {
+                $("#IP").html(data.ip);
+            })
+        var IPspan = document.getElementById("IP");
+        if (IPspan.innerText == "") {
+            IPspan.innerText = "None";
+        }       
+    </script>
+
+</head>
+
+<body>
+    <div class="main">
+        <div id="showarea">
+            <textarea readonly id="showbox"></textarea>
+        </div>
+
+        <div id="sendarea">
+            <textarea id="inputbox"></textarea>
+            <div id="sendbutton">
+                <p>SEND</p>
+            </div>
+        </div>
+        <div id="iparea">
+            <p>Your IP address:<span id="IP"></span>
+            <p>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
