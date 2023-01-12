@@ -27,8 +27,9 @@
         }
 
         #info {
-            background-color: rgb(194, 194, 194);
+            background-color: rgb(219, 219, 219);
             padding: 15px;
+            user-select:none;
         }
 
         #timetext {
@@ -40,17 +41,27 @@
         #lab {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 20px;
+            margin-top: 10px;
         }
+
         .num-select {
-            width:100%;
-            height:34px;
-            
+            /* width: 100%; */
+            height: 25px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            margin: 10px;
+            border-radius: 7px;
+            border: rgba(0, 0, 0, 0);
+            /* box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075); */
         }
+
         .combo {
             display: block;
             width: 100%;
             height: 34px;
             padding: 6px 12px;
+            margin-top: 7px;
             font-size: 14px;
             line-height: 1.42857143;
             color: #555;
@@ -64,6 +75,33 @@
             -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
             -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
             transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+        #setting-view{
+            position:absolute;
+            bottom: 10px;
+            font-size: 25px;
+            user-select:none;
+            margin: 5px;
+            right: 30px;
+            background-color: rgba(0, 0, 0,0);
+        }
+        #turn-on-setting {
+            display: inline;
+            padding: 7px;
+            opacity: 0.1;
+            border-radius: 30px;
+        }
+        #turn-on-setting:hover{
+            opacity: 1;
+        }
+        #turn-off-setting:hover {
+            opacity: 1;
+        }
+        #turn-off-setting {
+            display: inline;
+            padding: 7px;
+            opacity: 0.1;
+            border-radius: 30px;
         }
     </style>
 </head>
@@ -107,7 +145,8 @@
             </select>
             <label for="combo" id="lab">字体</label>
             <select class="combo" name="lab">
-                /* font-family: 'Courier New', Courier, monospace;
+                /* 
+                font-family: 'Courier New', Courier, monospace;
                 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
                 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
@@ -118,7 +157,8 @@
                 font-family: Arial, Helvetica, sans-serif;
                 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
                 font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-                font-family: Verdana, Geneva, Tahoma, sans-serif; */
+                font-family: Verdana, Geneva, Tahoma, sans-serif; 
+                */
                 <option value="Arial, Helvetica, sans-serif">Arial, Helvetica, sans-serif</option>
                 <option value="Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Cambria, Cochin, Georgia,
                     Times, 'Times New
@@ -146,6 +186,10 @@
             <label for="num" id="lab">字号</label>
             <input type="number" class="num-select" min="8" max="96" name="num">
         </div>
+        <div id="setting-view">
+            <div id="turn-off-setting">&#9193;</div>
+            <div id="turn-on-setting">&#9194;</div>
+        </div>  
     </div>
 </body>
 
