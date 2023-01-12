@@ -164,8 +164,6 @@ body {
     box-shadow: none;
 }
 
-.color-box {
-    width:15px;
-    height:15px;
-    color:
+#bg-set {
+    display: inline;
 }
