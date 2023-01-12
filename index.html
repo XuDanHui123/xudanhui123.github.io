@@ -19,7 +19,7 @@
             </div>
         </div>
         <div id="info">
-            <label for="UTC-select" id="lab">时区</label>
+            <!-- <label for="UTC-select" id="lab">时区</label>
             <select class="combo" name="UTC-select">
                 <option value=0>UTC</option>
                 <option value=1>UTC+1</option>
@@ -45,7 +45,7 @@
                 <option value=-9>UTC-9</option>
                 <option value=-10>UTC-10</option>
                 <option value=-11>UTC-11</option>
-            </select>
+            </select> -->
             <label for="combo" id="lab">字体</label>
             <select class="combo" name="lab">
                 /* 
@@ -86,25 +86,20 @@
                     'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif</option>
                 <option value="Verdana, Geneva, Tahoma, sans-serif">Verdana, Geneva, Tahoma, sans-serif</option>
             </select>
-        <div class="form__group field">
-            <input required="" placeholder="Name" class="form__field" type="input">
-            <label class="form__label" for="name">字号(0->72)</label>
-        </div>
-        <div class="card">
-            <div class="tools">
-                <div class="circle">
-                    <span class="red box"></span>
+            <div class="form__group field">
+                <input required="" placeholder="Name" class="form__field" type="input">
+                <label class="form__label" for="name">字号(0->72)</label>
+            </div>
+            <div id="bg-set">
+                <div class="form__group field">
+                    <input required="" placeholder="Name" class="form__field" type="input">
+                    <label class="form__label" for="name">设置背景色(Hex color)</label>
                 </div>
-                <div class="circle">
-                    <span class="yellow box"></span>
-                </div>
-                <div class="circle">
-                    <span class="green box"></span>
+                <div class="color-box">
+
                 </div>
             </div>
-            <div class="card__content">
-            </div>
-        </div>
+        </div> 
         <div id="setting-view">
             <div id="turn-off-setting">&#9193;</div>
             <div id="turn-on-setting">&#9194;</div>

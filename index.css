@@ -11,14 +11,14 @@ body {
 }
 
 #time {
-    background-color: gainsboro;
+    background-color: rgb(245, 245, 245);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #info {
-    background-color: rgb(219, 219, 219);
+    background-color: rgb(245, 245, 245);
     padding: 15px;
     user-select: none;
 }
@@ -114,7 +114,7 @@ body {
     border-bottom: 2px solid #9b9b9b;
     outline: 0;
     font-size: 17px;
-    color: #fff;
+    color: rgb(0, 0, 0);
     padding: 7px 0;
     background: transparent;
     transition: border-color 0.2s;
@@ -162,4 +162,10 @@ body {
 .form__field:required,
 .form__field:invalid {
     box-shadow: none;
+}
+
+.color-box {
+    width:15px;
+    height:15px;
+    color:
 }
