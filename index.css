@@ -163,7 +163,3 @@ body {
 .form__field:invalid {
     box-shadow: none;
 }
-
-#bg-set {
-    display: inline;
-}
