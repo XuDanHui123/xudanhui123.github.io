@@ -1,50 +1,152 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 
 <head>
-    <style>
-        @import url("index.css");
-    </style>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreeChat</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-    </script>
-    <script>
-        $.getJSON("https://api.ipify.org?format=json",
-            function (data) {
-                $("#IP").html(data.ip);
-            })
-        var IPspan = document.getElementById("IP");
-        if (IPspan.innerText == "") {
-            IPspan.innerText = "None";
-        }       
-    </script>
+    <title>Time Info</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
 
+        #main {
+            min-height: 100%;
+            display: grid;
+            grid-template-columns: 80% 20%;
+        }
+
+        #time {
+            background-color: gainsboro;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #info {
+            background-color: rgb(194, 194, 194);
+            padding: 15px;
+        }
+
+        #timetext {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #lab {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+        .num-select {
+            width:100%;
+            height:34px;
+            
+        }
+        .combo {
+            display: block;
+            width: 100%;
+            height: 34px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="main">
-        <div id="showarea">
-            <textarea readonly id="showbox"></textarea>
-        </div>
+    <div id="main">
+        <div id="time">
+            <div id="timetext">
+                <p>
 
-        <div id="sendarea">
-            <textarea id="inputbox"></textarea>
-            <div id="sendbutton">
-                <p>SEND</p>
+                </p>
             </div>
         </div>
-        <div id="iparea">
-            <p>Your IP address:<span id="IP"></span>
-            <p>
+        <div id="info">
+            <label for="UTC-select" id="lab">时区</label>
+            <select class="combo" name="UTC-select">
+                <option value=0>UTC</option>
+                <option value=1>UTC+1</option>
+                <option value=2>UTC+2</option>
+                <option value=3>UTC+3</option>
+                <option value=4>UTC+4</option>
+                <option value=5>UTC+5</option>
+                <option value=6>UTC+6</option>
+                <option value=7>UTC+7</option>
+                <option value=8>UTC+8</option>
+                <option value=9>UTC+9</option>
+                <option value=10>UTC+10</option>
+                <option value=11>UTC+11</option>
+                <option value=12>东西十二区</option>
+                <option value=-1>UTC-1</option>
+                <option value=-2>UTC-2</option>
+                <option value=-3>UTC-3</option>
+                <option value=-4>UTC-4</option>
+                <option value=-5>UTC-5</option>
+                <option value=-6>UTC-6</option>
+                <option value=-7>UTC-7</option>
+                <option value=-8>UTC-8</option>
+                <option value=-9>UTC-9</option>
+                <option value=-10>UTC-10</option>
+                <option value=-11>UTC-11</option>
+            </select>
+            <label for="combo" id="lab">字体</label>
+            <select class="combo" name="lab">
+                /* font-family: 'Courier New', Courier, monospace;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
+                Verdana, sans-serif;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-family: 'Times New Roman', Times, serif;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-family: Arial, Helvetica, sans-serif;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-family: Verdana, Geneva, Tahoma, sans-serif; */
+                <option value="Arial, Helvetica, sans-serif">Arial, Helvetica, sans-serif</option>
+                <option value="Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Cambria, Cochin, Georgia,
+                    Times, 'Times New
+                    Roman', serif</option>
+                <option value="'Courier New', Courier, monospace">'Courier New', Courier, monospace</option>
+                <option value="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Impact, Haettenschweiler,
+                    'Arial Narrow Bold',
+                    sans-serif</option>
+                <option value="'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">'Franklin Gothic Medium',
+                    'Arial Narrow', Arial, sans-serif</option>
+                <option value="'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">'Gill Sans', 'Gill Sans
+                    MT', Calibri, 'Trebuchet MS', sans-serif</option>
+                <option
+                    value="'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                    'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+                    sans-serif</option>
+                <option value="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">'Segoe UI', Tahoma, Geneva, Verdana,
+                    sans-serif</option>
+                <option value="'Times New Roman', Times, serif">'Times New Roman', Times, serif</option>
+                <option
+                    value="'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+                    'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif</option>
+                <option value="Verdana, Geneva, Tahoma, sans-serif">Verdana, Geneva, Tahoma, sans-serif</option>
+            </select>
+            <label for="num" id="lab">字号</label>
+            <input type="number" class="num-select" min="8" max="96" name="num">
         </div>
     </div>
-
-
-
 </body>
 
 </html>
