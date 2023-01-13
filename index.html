@@ -20,33 +20,6 @@
             </div>
         </div>
         <div id="info">
-            <!-- <label for="UTC-select" id="lab">时区</label>
-            <select class="combo" name="UTC-select">
-                <option value=0>UTC</option>
-                <option value=1>UTC+1</option>
-                <option value=2>UTC+2</option>
-                <option value=3>UTC+3</option>
-                <option value=4>UTC+4</option>
-                <option value=5>UTC+5</option>
-                <option value=6>UTC+6</option>
-                <option value=7>UTC+7</option>
-                <option value=8>UTC+8</option>
-                <option value=9>UTC+9</option>
-                <option value=10>UTC+10</option>
-                <option value=11>UTC+11</option>
-                <option value=12>东西十二区</option>
-                <option value=-1>UTC-1</option>
-                <option value=-2>UTC-2</option>
-                <option value=-3>UTC-3</option>
-                <option value=-4>UTC-4</option>
-                <option value=-5>UTC-5</option>
-                <option value=-6>UTC-6</option>
-                <option value=-7>UTC-7</option>
-                <option value=-8>UTC-8</option>
-                <option value=-9>UTC-9</option>
-                <option value=-10>UTC-10</option>
-                <option value=-11>UTC-11</option>
-            </select> -->
             <label for="combo" class="lab">字体</label>
             <select class="combo" name="lab">
                 <option value="Arial, Helvetica, sans-serif">Arial, Helvetica, sans-serif</option>
@@ -87,7 +60,7 @@
             </div>
             <div id="prefixZero">
                 <label class="lab">补充前导零</label>
-                <div style="flex:1;display:flex;justify-content:flex-end;align-items:center;padding-right:10px"> 
+                <div style="flex:1;display:flex;justify-content:flex-end;align-items:center;padding-right:10px">
                     <label class="switch">
                         <input type="checkbox" checked>
                         <span class="slider"></span>
@@ -95,21 +68,25 @@
                 </div>
             </div>
             <div id="show_about" class="white_black_button">
-                <button onclick="document.getElementById('forbiddenArea').style.visibility = 'visible'"> 关于 </button>
+                <button onclick="
+                    document.getElementById('forbiddenArea').style.visibility = 'visible';
+                    document.getElementById('forbiddenArea').style.animation='open_about 0.5s cubic-bezier(1, 0, 1, 1) forwards';
+                    wait(500);
+                "> 关于 </button>
             </div>
-        </div> 
+        </div>
         <div id="forbiddenArea">
             <div class="card">
-                <div class="tools">
-                    <div class="circle">
-                        <span class="red box"></span>
-                    </div>
-                </div>
+                <div class="close_about_bnt" onclick="
+                    document.getElementById('forbiddenArea').style.animation='close_about 0.5s cubic-bezier(1, 0, 1, 1) forwards';
+                    wait(500);
+                    document.getElementById('forbiddenArea').style.visibility = 'hidden';"></div>
                 <div class="card__content">
                     <h1>About</h1>
                     <h2>It's a clock but aslo a screen saver</h2>
                     <h3>I hope you will like it ;-)</h3>
-                    <h4>If you like it, plz star it on <a href="https://github.com/XuDanHui123/xudanhui123.github.io">Github</a></h4>
+                    <h4>If you like it, plz star it on <a
+                            href="https://github.com/XuDanHui123/xudanhui123.github.io">Github</a></h4>
                     <h5>the website is created by <a href="https://github.com/XuDanHui123">Xudanhui</a></h5>
                     <hr>
                 </div>
