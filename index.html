@@ -14,7 +14,7 @@
     <div id="main">
         <div id="time">
             <div id="timetext">
-                <p>
+                <p id="showtime">
 
                 </p>
             </div>
@@ -47,22 +47,8 @@
                 <option value=-10>UTC-10</option>
                 <option value=-11>UTC-11</option>
             </select> -->
-            <label for="combo" id="lab">字体</label>
+            <label for="combo" class="lab">字体</label>
             <select class="combo" name="lab">
-                /* 
-                font-family: 'Courier New', Courier, monospace;
-                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
-                Verdana, sans-serif;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                font-family: 'Times New Roman', Times, serif;
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                font-family: Arial, Helvetica, sans-serif;
-                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-                font-family: Verdana, Geneva, Tahoma, sans-serif; 
-                */
                 <option value="Arial, Helvetica, sans-serif">Arial, Helvetica, sans-serif</option>
                 <option value="Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Cambria, Cochin, Georgia,
                     Times, 'Times New
@@ -99,11 +85,36 @@
                 <input required="" placeholder="Name" class="form__field" type="input">
                 <label class="form__label" for="name">设置前景色(Hex)</label>
             </div>
+            <div id="prefixZero">
+                <label class="lab">补充前导零</label>
+                <div style="flex:1;display:flex;justify-content:flex-end;align-items:center;padding-right:10px"> 
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div id="show_about" class="white_black_button">
+                <button> 关于 </button>
+            </div>
         </div> 
-        <div id="setting-view">
-            <div id="turn-off-setting">&#9193;</div>
-            <div id="turn-on-setting">&#9194;</div>
-        </div>  
+        <div class="forbiddenArea">
+            <div class="card">
+                <div class="tools">
+                    <div class="circle">
+                        <span class="red box"></span>
+                    </div>
+                    <div class="circle">
+                        <span class="yellow box"></span>
+                    </div>
+                    <div class="circle">
+                        <span class="green box"></span>
+                    </div>
+                </div>
+                <div class="card__content">
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 

@@ -29,10 +29,10 @@ body {
     align-items: center;
 }
 
-#lab {
+.lab {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 
 .num-select {
@@ -146,6 +146,7 @@ body {
     border-width: 3px;
     border-image: linear-gradient(to right, #38caef, #116399);
     border-image-slice: 1;
+
 }
 
 .form__field:focus~.form__label {
@@ -158,8 +159,169 @@ body {
     font-weight: 700;
 }
 
-/* reset input */
 .form__field:required,
 .form__field:invalid {
     box-shadow: none;
+}
+
+
+#prefixZero {
+    margin-top: 15px;
+    display: flex;
+    width: 100%;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 62px;
+    height: 35px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 1;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    background: #fff;
+    transition: .4s;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.9em;
+    width: 1.9em;
+    border-radius: 16px;
+    left: 1.2px;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+    box-shadow: 0 2px 5px #999999;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #5fdd54;
+    border: 1px solid transparent;
+}
+
+input:checked+.slider:before {
+    transform: translateX(1.5em);
+}
+
+.white_black_button button {
+    cursor: pointer;
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 1;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms;
+    overflow: hidden;
+}
+
+.white_black_button button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #212121;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms
+}
+
+.white_black_button button:hover {
+    color: #e8e8e8;
+}
+
+.white_black_button button:hover::before {
+    width: 100%;
+}
+
+#show_about {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.card {
+    width: 50%;
+    height: 50%;
+    margin: 0 auto;
+    background-color: #F8FBFE;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.tools {
+    display: flex;
+    align-items: center;
+    padding: 9px;
+}
+
+.circle {
+    padding: 0 4px;
+}
+
+.box {
+    display: inline-block;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    padding: 1px;
+    border-radius: 50%;
+}
+
+.red {
+    background-color: #ff605c;
+}
+
+.yellow {
+    background-color: #ffbd44;
+}
+
+.green {
+    background-color: #00ca4e;
+}
+
+.forbiddenArea {
+    /* visibility: hidden; */
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, .7);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
