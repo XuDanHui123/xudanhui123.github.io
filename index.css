@@ -270,6 +270,11 @@ input:checked+.slider:before {
     bottom: 10px;
 }
 
+.card__content {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
 .card {
     width: 50%;
     height: 50%;
@@ -293,6 +298,7 @@ input:checked+.slider:before {
     display: inline-block;
     align-items: center;
     width: 10px;
+    cursor:pointer;
     height: 10px;
     padding: 1px;
     border-radius: 50%;
@@ -310,8 +316,8 @@ input:checked+.slider:before {
     background-color: #00ca4e;
 }
 
-.forbiddenArea {
-    /* visibility: hidden; */
+#forbiddenArea {
+    visibility: hidden;
     z-index: 999;
     position: absolute;
     top: 0;

@@ -25,6 +25,6 @@ function prefixZero() {
     datebase[6] = second;
     return datebase;
 }
-function about() { 
-    
+function showabout() { 
+    document.getElementsByClassName("forbiddenArea").style.visibility = "visible";
 }
