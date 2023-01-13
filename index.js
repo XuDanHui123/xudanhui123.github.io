@@ -9,7 +9,7 @@ function getTime() {
     var second = fullDate.getSeconds(); // %s
     return [year, month, date, day, hour, minute, second];
 }
-function prefixZero() {
+function timeWithPrefixZero() {
     var datebase = getTime();
     var hour = datebase[4];
     var month = datebase[1];
@@ -24,4 +24,20 @@ function prefixZero() {
     datebase[5] = minute;
     datebase[6] = second;
     return datebase;
+}
+function showTimeOnScr() {
+    var datebase = new Array();
+    if (document.getElementById("prefix").ariaChecked) {
+        datebase = timeWithPrefixZero();
+    } else {
+        datebase = getTime();
+    }
+    var year = datebase[0];
+    var month = datebase[1];
+    var date = datebase[2];
+    var day = datebase[3];
+    var hour = datebase[4];
+    var minute = datebase[5];
+    var second = datebase[6];
+
 }
