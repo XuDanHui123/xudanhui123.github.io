@@ -87,19 +87,18 @@
                 right: 10px;
                 bottom: 10px;">
                 <button onclick="
-                    document.getElementById('forbiddenArea').style.visibility = 'visible';
-                    document.getElementById('forbiddenArea').style.animation='open_about 0.5s cubic-bezier(0, 1, 1, 1) forwards';
-                    
+                    document.getElementById('about').style.visibility = 'visible';
+                    document.getElementById('about').style.animation='open_about 0.5s cubic-bezier(0, 1, 1, 1) forwards';
                     wait(500);
                 "> 关于 </button>
             </div>
         </div>
-        <div class="modelDialog">
+        <div class="modelDialog" id="about">
             <div class="card">
                 <div class="close_modelDialog_bnt" onclick="
-                    document.getElementById('forbiddenArea').style.animation='close_about 0.5s cubic-bezier(1, 0, 1, 1) forwards';
+                    document.getElementById('about').style.animation='close_about 0.5s cubic-bezier(1, 0, 1, 1) forwards';
                     wait(500);
-                    document.getElementById('forbiddenArea').style.visibility = 'hidden';"></div>
+                    document.getElementById('about').style.visibility = 'hidden';"></div>
                 <div class="card__content">
                     <h1>About</h1>
                     <h2>It's a clock but aslo a screen saver</h2>

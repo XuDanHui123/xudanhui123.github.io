@@ -178,7 +178,7 @@ input:checked+.slider:before {
     overflow: hidden;
 }
 
-.white_black_button button::before {
+#white_black_button button::before {
     content: "";
     position: absolute;
     top: 0;
@@ -193,11 +193,11 @@ input:checked+.slider:before {
     transition: all 250ms
 }
 
-.white_black_button button:hover {
+#white_black_button button:hover {
     color: #e8e8e8;
 }
 
-.white_black_button button:hover::before {
+#white_black_button button:hover::before {
     width: 100%;
 }
 
@@ -219,6 +219,38 @@ input:checked+.slider:before {
         -12px -12px 20px #ffffff;
 }
 
+.tools {
+    display: flex;
+    align-items: center;
+    padding: 9px;
+}
+
+.circle {
+    padding: 0 4px;
+}
+
+.box {
+    display: inline-block;
+    align-items: center;
+    width: 10px;
+    cursor:pointer;
+    height: 10px;
+    padding: 1px;
+    border-radius: 50%;
+}
+
+.red {
+    background-color: #ff605c;
+}
+
+.yellow {
+    background-color: #ffbd44;
+}
+
+.green {
+    background-color: #00ca4e;
+}
+
 .modelDialog {
     visibility: hidden;
     z-index: 999;
@@ -237,24 +269,23 @@ input:checked+.slider:before {
 
 .close_modelDialog_bnt {
     position: relative;
-    top: 5%;
-    cursor: pointer;
-    left: 1%;
-    height: 15px;
-    width: 15px;
+    top:5%;
+    cursor:pointer;
+    left:1%;
+    height:15px;
+    width:15px;
     border-radius: 22px;
     background: linear-gradient(145deg, #ff6762, #e65653);
     /* box-shadow: 5px 5px 8px #e65653, */
-    /* -5px -5px 8px #ff6a65; */
+        /* -5px -5px 8px #ff6a65; */
 }
 
 @keyframes close_about {
-    from {
+    from{
         transform: scale(1);
         opacity: 1;
     }
-
-    to {
+    to{
         transform: scale(0);
         opacity: 0;
     }
@@ -263,12 +294,12 @@ input:checked+.slider:before {
 
 @keyframes open_about {
     from {
-        opacity: 0;
+        opacity:0;
         transform: scale(0);
     }
 
     to {
-        opacity: 1;
+        opacity:1;
         transform: scale(1);
     }
 }
