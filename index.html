@@ -11,15 +11,24 @@
 </head>
 
 <body>
-    <div id="main">
-        <div id="time">
-            <div id="timetext">
+    <div style="min-height: 100%;
+                display: grid;
+                grid-template-columns: 80% 20%;">
+        <div style="background-color: rgb(245, 245, 245);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;">
+            <div style="display: flex;
+                        justify-content: center;
+                        align-items: center;">
                 <p id="showtime">
 
                 </p>
             </div>
         </div>
-        <div id="info">
+        <div style="background-color: rgb(245, 245, 245);
+                    padding: 15px;
+                    user-select: none;">
             <label for="combo" class="lab">字体</label>
             <select class="combo" name="lab">
                 <option value="Arial, Helvetica, sans-serif">Arial, Helvetica, sans-serif</option>
@@ -58,26 +67,36 @@
                 <input required="" placeholder="Name" class="form__field" type="input">
                 <label class="form__label" for="name">设置前景色(Hex)</label>
             </div>
-            <div id="prefixZero">
+            <div style="margin-top: 15px;
+                        display: flex;
+                        width: 100%;">
                 <label class="lab">补充前导零</label>
-                <div style="flex:1;display:flex;justify-content:flex-end;align-items:center;padding-right:10px">
+                <div style="flex:1;
+                            display:flex;
+                            justify-content:flex-end;
+                            align-items:center;
+                            padding-right:10px;">
                     <label class="switch">
                         <input type="checkbox" checked id="prefix">
                         <span class="slider"></span>
                     </label>
                 </div>
             </div>
-            <div id="show_about" class="white_black_button">
+            <div id="white_black_button" style="    
+                position: absolute;
+                right: 10px;
+                bottom: 10px;">
                 <button onclick="
                     document.getElementById('forbiddenArea').style.visibility = 'visible';
-                    document.getElementById('forbiddenArea').style.animation='open_about 0.5s cubic-bezier(1, 0, 1, 1) forwards';
+                    document.getElementById('forbiddenArea').style.animation='open_about 0.5s cubic-bezier(0, 1, 1, 1) forwards';
+                    
                     wait(500);
                 "> 关于 </button>
             </div>
         </div>
-        <div id="forbiddenArea">
+        <div class="modelDialog">
             <div class="card">
-                <div class="close_about_bnt" onclick="
+                <div class="close_modelDialog_bnt" onclick="
                     document.getElementById('forbiddenArea').style.animation='close_about 0.5s cubic-bezier(1, 0, 1, 1) forwards';
                     wait(500);
                     document.getElementById('forbiddenArea').style.visibility = 'hidden';"></div>
